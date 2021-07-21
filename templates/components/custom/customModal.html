@@ -1,0 +1,56 @@
+{{#if theme_settings.show_custom_modal '===' true}}
+
+
+<div id="customModalbg" class="modal-background"></div>
+<section id="customModal" class="modal">
+<!-- The following section is taken from the template you specify -->
+<div class="modal-header">
+    <h2 class="modal-header-title">{{ theme_settings.custom_modal_title }}</h2>
+</div>
+<div class="modal-body">
+    <p>{{ theme_settings.custom_modal_content }}</p>
+</div>
+{{> components/common/modal/modal-close-btn}}
+
+<div class="modal-footer">
+
+</div>
+<style>
+    .modalbg-active{
+        display: block;
+    }
+    .modal-active{
+        display: block;
+        visibility: visible;
+    }
+</style>
+
+<script>
+    function customModalShow(){
+
+        
+    document.getElementById('customModalbg').classList.add('modalbg-active');
+    document.getElementById('customModal').classList.add('modal-active');
+
+
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {    
+        setTimeout(customModalShow, 1000000);
+    });
+
+    document.getElementById('customModalbg').addEventListener('click', function(){
+        document.getElementById('customModalbg').classList.remove('modalbg-active');
+        document.getElementById('customModal').classList.remove('modal-active');
+    })
+
+
+    let closebtns = [].slice.call(document.getElementsByClassName('modal-close'));
+    closebtns.forEach(element => {
+        element.addEventListener('click', function(){
+            document.getElementById('customModalbg').classList.remove('modalbg-active');
+            document.getElementById('customModal').classList.remove('modal-active');
+        })
+    });
+</script>
+
+{{/if}}

@@ -1,0 +1,12 @@
+{
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {
+      "customtemlate.html": "/custom-page/"
+    },
+    "product": {}
+  },
+  "normalStoreUrl": "https://verybigcommercestore.mybigcommerce.com",
+  "port": 3000
+}

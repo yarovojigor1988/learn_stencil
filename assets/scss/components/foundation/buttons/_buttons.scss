@@ -1,0 +1,34 @@
+// =============================================================================
+// BUTTONS (CSS)
+// =============================================================================
+
+$button--primary-font-size: stencilNumber("button--primary-font-size");
+$button--primary-border-radius: stencilNumber("button--primary-border-radius");
+
+
+.button {
+    line-height: 1rem;
+    transition: all 0.15s ease;
+
+    font-size: $button--primary-font-size;
+    border-radius: $button--primary-border-radius;
+
+    + .button {
+        margin-left: 0;
+
+        @include breakpoint("medium") {
+            margin-left: spacing("half");
+        }
+    }
+}
+
+.button[disabled] {
+    cursor: not-allowed;
+}
+
+.button--icon {
+
+    svg {
+        fill: stencilColor("button--icon-svg-color");
+    }
+}

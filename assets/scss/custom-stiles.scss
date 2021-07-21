@@ -1,0 +1,39 @@
+
+@media (min-width:801px){
+
+    .navPages-item:hover>.navPage-subMenu{
+        display: block;
+
+
+        .navPage-subMenu-item{
+            width: 100%;
+            position: relative;
+
+            .navPage-subMenu-action.has-subMenu::after{
+                content: '>';
+                font-size: 12px;
+            }
+
+            .navPage-childList{
+                display: none;
+                position: absolute;
+                top: -13px;
+                left: 100%;
+                background: #e5e5e5;
+                padding: 1.5rem;
+
+                .navPage-childList-item:not(:last-child){
+                    padding-bottom: 8px;
+                }
+            }
+
+            &:hover {
+                .navPage-childList{
+                    display: block;
+                    
+                }
+            }
+        }
+    }
+
+}
